@@ -2,3 +2,4 @@
 
 . ${NVM_DIR}/nvm.sh
 nvm run `node ./bin/printNodeVersion` gulpfile.js  deployPreprod
+cp -r dist/* ../polisFileServer/prod/
