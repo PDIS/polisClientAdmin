@@ -224,6 +224,11 @@ export const doSignin = (attrs, dest) => {
     dispatch(signinInitiated());
     return signinPost(attrs).then(
       () => {
+        var opener = window.opener;
+        if (opener && opener.signinCallback) {
+          opener.signinCallback();
+          window.close();
+        }
         setTimeout(() => {
           // Force page to load so we can be sure the password is cleared from memory
           // delay a bit so the cookie has time to set
