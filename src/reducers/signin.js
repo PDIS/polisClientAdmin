@@ -9,7 +9,7 @@ const signin = (state = {
   facebookError: false
 }, action) => {
   switch (action.type) {
-  case types.FACEBOOK_SIGNIN_INITIATED:
+  case types.FACEBOOK_SIGNIN_INITIATED:gr__ait-polis_pdis_nat_gov_tw
     return Object.assign({}, state, {
       loading: false,
       facebookLoading: true,

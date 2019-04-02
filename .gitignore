@@ -37,4 +37,4 @@ npm-debug.log
 .env_dev
 polis.config.js
 .polis_scp_creds_client.json
-
+.idea

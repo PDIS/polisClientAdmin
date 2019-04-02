@@ -37,6 +37,15 @@ const styles = {
     borderRadius: 5,
     fontSize: 14,
   },
+  joinButton: {
+    border: 0,
+    color: "white",
+    backgroundColor: "goldenrod",
+    fontWeight: 300,
+    padding: "8px 12px",
+    borderRadius: 5,
+    fontSize: 14,
+  },
   signupContainer: {
     marginTop: 20,
   },
@@ -76,6 +85,12 @@ class SignIn extends React.Component {
       dest = "/";
     }
     this.props.dispatch(doSignin(attrs, dest));
+  }
+
+  joinButtonClicked() {
+    this.props.dispatch(() => {
+      // FIXME: Change to polisConfig.js config variable (I don't know how to!!!)
+      window.location.href = 'https://join.gov.tw/portal/api/auth/login?redirect_uri=https%3A%2F%2Fait-polis.pdis.nat.gov.tw%2Fsignin-join';});
   }
 
   facebookButtonClicked() {
@@ -134,16 +149,16 @@ class SignIn extends React.Component {
         </form>
         <div className="bt b--light-gray pt3">
           <Button
+            style={styles.joinButton}
+            onClick={this.joinButtonClicked.bind(this)}>
+            <span>{"以公共政策網路參與平臺帳號登入"}</span>
+          </Button>
+          <Button
             style={styles.facebookButton}
             onClick={this.facebookButtonClicked.bind(this)}>
-              <SocialIcon
-                key="icon-facebook"
-                network="facebook"
-                color="white"
-                className="mr3"
-              />          
             <span>{"Sign in with Facebook"}</span>
           </Button>
+          &nbsp;
           <p className="mt4 mb3 lh-copy">
             {
               "If you click 'Sign in with Facebook' and are not a pol.is user, you will be registered and you agree to the pol.is terms and privacy policy"

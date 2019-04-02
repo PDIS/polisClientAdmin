@@ -139,6 +139,10 @@ export const FACEBOOK_SIGNIN_INITIATED = "FACEBOOK_SIGNIN_INITIATED";
 export const FACEBOOK_SIGNIN_SUCCESSFUL = "FACEBOOK_SIGNIN_SUCCESSFUL";
 export const FACEBOOK_SIGNIN_FAILED = "FACEBOOK_SIGNIN_FAILED";
 
+export const JOIN_SIGNIN_INITIATED = "JOIN_SIGNIN_INITIATED";
+export const JOIN_SIGNIN_SUCCESSFUL = "JOIN_SIGNIN_SUCCESSFUL";
+export const JOIN_SIGNIN_FAILED = "JOIN_SIGNIN_FAILED";
+
 export const SUBMIT_CONTRIB = "SUBMIT_CONTRIB";
 export const SUBMIT_CONTRIB_SUCCESS = "SUBMIT_CONTRIB_SUCCESS";
 export const SUBMIT_CONTRIB_ERROR = "SUBMIT_CONTRIB_ERROR";
@@ -590,7 +594,6 @@ export const doFacebookSignin = (dest, optionalPassword) => {
     return callFacebookLoginAPI(dest, dispatch, optionalPassword)
   }
 }
-
 /* signout */
 
 const signoutInitiated = () => {
