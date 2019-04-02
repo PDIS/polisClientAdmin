@@ -33,18 +33,18 @@ const styles = {
     color: "white",
     backgroundColor: "#3b5998",
     fontWeight: 300,
-    padding: "8px 12px",
+    padding: "12px 18px",
     borderRadius: 5,
-    fontSize: 14,
+    fontSize: 16,
   },
   joinButton: {
     border: 0,
     color: "white",
     backgroundColor: "goldenrod",
     fontWeight: 300,
-    padding: "8px 12px",
+    padding: "12px 18px",
     borderRadius: 5,
-    fontSize: 14,
+    fontSize: 16,
   },
   signupContainer: {
     marginTop: 20,
@@ -153,6 +153,7 @@ class SignIn extends React.Component {
             onClick={this.joinButtonClicked.bind(this)}>
             <span>{"以公共政策網路參與平臺帳號登入"}</span>
           </Button>
+          &nbsp;
           <Button
             style={styles.facebookButton}
             onClick={this.facebookButtonClicked.bind(this)}>
