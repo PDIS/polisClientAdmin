@@ -97,6 +97,16 @@ gulp.task('index', [
   fs.writeFileSync(indexDest, html);
 });
 
+gulp.task('signIn', [], () => {
+  let html = fs.readFileSync('src/templated/components/signin.js', {encoding: "utf8"});
+  html = html.replace("<%= useJoinLogin %>", isTrue(polisConfig.USE_JOIN_LOGIN).toString());
+  html = html.replace("<%= JoinLoginURL %>", polisConfig.JOIN_LOGIN_URL);
+
+  // index goes to the root of the dist folder.
+  var indexDest = 'src/components/signin.js';
+  fs.writeFileSync(indexDest, html);
+});
+
 gulp.task('embed', [
 ], function() {
   var index = fs.readFileSync('embed.html', {encoding: "utf8"});
@@ -203,6 +213,7 @@ gulp.task('common', [
     runSequence(
       'bundle',
       'index',
+      'signIn',
       'embed',
       'embedPreprod',
       'embedReport',

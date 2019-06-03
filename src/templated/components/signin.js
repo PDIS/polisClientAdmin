@@ -122,12 +122,17 @@ class SignIn extends React.Component {
   }
   drawLoginForm() {
     let joinSignIn = '';
-    <Button
-      style={styles.joinButton}
-      onClick={this.joinButtonClicked.bind(this)}>
-      <span>{"以公共政策網路參與平臺帳號登入"}</span>
-    </Button>
-    &nbsp;
+    if ('<%= useJoinLogin %>' === 'true') {
+      joinSignIn =
+        <span>
+        <Button
+          style={styles.joinButton}
+          onClick={this.joinButtonClicked.bind(this)}>
+          <span>{"以公共政策網路參與平臺帳號登入"}</span>
+        </Button>
+        &nbsp;
+        </span>
+    }
     return (
       <div className="w-100 w-50-ns">
         <form className="mb4">
