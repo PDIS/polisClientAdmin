@@ -145,9 +145,6 @@ class Root extends React.Component {
             <Route path="privacy" component={Privacy}/>
           </Router>
         </Provider>
-        <DebugPanel top right bottom>
-          <DevTools store={store} visibleOnLoad={false} monitor={LogMonitor} />
-        </DebugPanel>
       </div>
     );
   }
